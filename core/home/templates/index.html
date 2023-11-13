@@ -81,6 +81,47 @@
                   </div>
             </div>
     </div>
+
+    <!-- Experiments with sending data from backend to frontend -->
+    <div style="margin: 30px; background-color: rgb(214, 124, 124);">
+        {{my_dict}}
+    </div>
+    <div style="margin: 30px; background-color: rgb(130, 124, 214);">
+        {{text}}
+    </div>
+
+        <table>
+            <tr>
+                <th>s.no</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Can Vote</th>
+            </tr>
+    
+            {% for people in my_dict %}
+            <tr>
+                <td>
+                    {{forloop.counter}}
+                    <!-- {{ text |truncatechars:10 }} -->
+                </td>
+                <td>{{people.name}}</td>
+                <td>{{people.age}}</td>
+                <td {% if people.age <= 18 %} style = "background-color: rgb(204, 55, 14)" {%endif%}>
+                    {%if people.age > 18 %}
+                    yes
+                    {%else%}
+                    No
+                    {%endif%}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <div>
+            <h1>this is home page</h1>
+            <a href="service/"> Service page | </a>
+            <a href="contact/"> Contact page</a>
+        </div>
 </body>
 </html>
 
