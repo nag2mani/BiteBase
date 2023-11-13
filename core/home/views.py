@@ -34,10 +34,15 @@ text = """Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos ipsa rer
 def home(request):
     return render(request, 'index.html', context={'my_dict': peoples, 'text':text})
 
+
+
 def contact(request):
-    return render(request, 'contact.html')
+    context = {'page': 'contact'}
+    return render(request, 'contact.html', context)
+
 
 def service(request):
-    return render(request, 'service.html')
+    context = {'page': 'service'}
+    return render(request, 'service.html', context)
 
 
