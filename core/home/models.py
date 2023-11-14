@@ -8,9 +8,12 @@ class Student(models.Model):
     age = models.IntegerField()
     email = models.EmailField(null=True)
 
-class Product(models.Model):
+class Car(models.Model):
     name = models.CharField(max_length=50)
-    price = models.IntegerField()
+    speed = models.IntegerField()
+
+    # def __str__(self) -> str:
+    #     return self.name
 
 
 
