@@ -7,9 +7,13 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
     email = models.EmailField(null=True)
-    image = models.ImageField()
-    file = models.FileField()
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
     price = models.IntegerField()
+
+
+
+
+
+

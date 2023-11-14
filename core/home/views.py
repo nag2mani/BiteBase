@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
 # Create your views here.
 
 # def home(request):
@@ -35,7 +36,6 @@ def home(request):
     return render(request, 'index.html', context={'my_dict': peoples, 'text':text})
 
 
-
 def contact(request):
     context = {'page': 'contact'}
     return render(request, 'contact.html', context)
@@ -44,5 +44,7 @@ def contact(request):
 def service(request):
     context = {'page': 'service'}
     return render(request, 'service.html', context)
+
+
 
 
