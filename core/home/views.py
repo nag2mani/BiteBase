@@ -33,13 +33,12 @@ text = """Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos ipsa rer
 
 #for html templates.
 def home(request):
-    return render(request, 'index.html', context={'my_dict': peoples, 'text':text})
+    return render(request, 'contest.html', context={'my_dict': peoples, 'text':text})
 
 
 def contact(request):
     context = {'page': 'contact'}
     return render(request, 'contact.html', context)
-
 
 def service(request):
     context = {'page': 'service'}

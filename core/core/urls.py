@@ -21,11 +21,10 @@ from home.views import *
 
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', home, name='contest'),
     # path("home/", home, name='home'),
-    path("service/", service, name='service'),
-    path("contact/", contact, name='contact'),
-    # path('cont-act/', contact),
+    # path("service/", service, name='service'),
+    # path("contact/", contact, name='contact'),
     path('admin/', admin.site.urls),
 ]
 
