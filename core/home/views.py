@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from home.seed import contest_list_all
-from home.models import Contest
+from home.models import *
 # Create your views here.
 
 # def home(request):
@@ -35,13 +34,12 @@ def home(request):
     return render(request, 'contest.html', context={'contest_list_all' : contests_from_database})
 
 
-def contact(request):
-    context = {'page': 'contact'}
-    return render(request, 'contact.html', context)
+def job(request):
+    return render(request, 'job.html')
 
-def service(request):
-    context = {'page': 'service'}
-    return render(request, 'service.html', context)
+
+def news(request):
+    return render(request, 'news.html')
 
 
 

@@ -41,8 +41,9 @@ def job_generator():
             if job:
                 company_name = job.find('h3', class_ = 'joblist-comp-name').text.strip().capitalize()
                 skills = job.find('span', class_ = 'srp-skills').text.strip().replace(' ', '')
-                apply_link = job.find('span', class_ = 'sim-posted').text.strip()
-                Job.objects.create(company_name = company_name, skills = skills, apply_link = apply_link)
+                apply_link = 'https://shorturl.at/cuvMU'
+                posted_date = job.find('span', class_ = 'sim-posted').text.strip()
+                Job.objects.create(company_name = company_name, skills = skills, posted_date = posted_date, apply_link = apply_link)
             else:
                 print("Anchor tag with class 'title_search' not found.")
         else:
