@@ -13,3 +13,9 @@ class Job(models.Model):
     apply_link = models.URLField()
 
 
+class News(models.Model):
+    headline = models.CharField(max_length=1000)
+    summary = models.CharField(max_length=100000)
+    link = models.URLField()
+
+
