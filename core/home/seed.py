@@ -58,3 +58,16 @@ contest_list_all = [{'title': 'BlackHat MEA CTF Final 2023', 'link': 'https://ct
 
 
 
+# Language converter
+# pip install translitcodec
+# from translitcodec import translit
+
+# cyrillic_text = "Национальн"
+
+# # Convert Cyrillic to English
+# english_text = translit(cyrillic_text, 'ru', reversed=True)
+
+# print(english_text)
+
+
+
