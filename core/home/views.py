@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from home.seed import contest_list_all
+from home.models import Contest
 # Create your views here.
 
 # def home(request):
@@ -18,22 +19,20 @@ from django.http import HttpResponse
 #    """)
 
 
-peoples = [
-    {'name':'Nagmani', 'age':22},
-    {'name':'Nagu', 'age':21},
-    {'name':'Mani', 'age':12},
-    {'name':'Kajal', 'age':18},
-    {'name':'Dadu', 'age':20}
-]
 
-text = """Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos ipsa rerum error corrupti vel, maiores laboriosam aliquid eligendi quidem reiciendis alias natus sunt id deserunt vitae ducimus veritatis modi? Quas, amet impedit. Fugit, facere? Tempora aliquam nesciunt reprehenderit totam exercitationem assumenda laborum neque. Blanditiis perfer"""
+# peoples = [
+#     {'name':'Nagmani', 'age':22},
+#     {'name':'Nagu', 'age':21},
+#     {'name':'Mani', 'age':12},
+#     {'name':'Kajal', 'age':18},
+#     {'name':'Dadu', 'age':20}
+# ]
 
-# for people in peoples:
-#     print(people['name'])
 
 #for html templates.
 def home(request):
-    return render(request, 'contest.html', context={'my_dict': peoples, 'text':text})
+    contests_from_database = Contest.objects.all()
+    return render(request, 'contest.html', context={'contest_list_all' : contests_from_database})
 
 
 def contact(request):

@@ -45,44 +45,35 @@
     </nav>
   </header>
 
-  <div class="body-container">
+  <div class="body-container card">
     <div class="image-container">
       <img src="static/contest.png" alt="Background Image">
-      <div class="overlay-text">Your Text Here</div>
-      <button class="action-button">Click Me</button>
+      <div class="overlay-text">Explore and Conquer Coding Contests and Hackathons Worldwide"</div>
+      <!-- <button class="action-button">Click Me</button> -->
     </div>
 
-    <div class="content-container">
+    <div class="content-container card">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">S.No.</th>
-            <th scope="col">Event Name</th>
-            <th scope="col">Website Link</th>
+            <th scope="col" style="text-align: center;" >S.No.</th>
+            <th scope="col" style="text-align: center;" >Contest Title</th>
+            <th scope="col" style="text-align: center;" >Website Link</th>
           </tr>
         </thead>
+
+        {% for contest in contest_list_all %}
+
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
+            <th scope="row" style="text-align: center;" >{{forloop.counter}}</th>
+            <td style="text-align: center;">{{contest.title}}</td>
+            <td style="text-align: center;" ><a href="{{contest.link}}">Link</a></td>
           </tr>
         </tbody>
+  
+        {%endfor%}
+
       </table>
     </div>
   </div>
@@ -125,5 +116,4 @@
       crossorigin="anonymous"></script>
   </body>
 </body>
-
 </html>

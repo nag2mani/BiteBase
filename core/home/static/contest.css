@@ -19,6 +19,7 @@
     color: rgb(245, 233, 233);
     font-size: 40px;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .action-button {
@@ -36,7 +37,18 @@
 }
 
 
+/* table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
 
+td, th {
+    text-align: center;
+    vertical-align: middle; */
+    /* padding: 10px; */
+    /* border: 1px solid #ddd; */
+}
 
 
 .footer {
