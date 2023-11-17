@@ -29,17 +29,19 @@ from home.models import *
 
 
 #for html templates.
-def home(request):
+def contest(request):
     contests_from_database = Contest.objects.all()
     return render(request, 'contest.html', context={'contest_list_all' : contests_from_database})
 
 
 def job(request):
-    return render(request, 'job.html')
+    jobs_from_database = Job.objects.all()
+    return render(request, 'job.html', context={'job_list_all' : jobs_from_database})
 
 
 def news(request):
-    return render(request, 'news.html')
+    news_from_database = News.objects.all()
+    return render(request, 'news.html', context={'news_list_all' : news_from_database})
 
 
 
