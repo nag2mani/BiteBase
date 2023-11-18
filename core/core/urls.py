@@ -22,8 +22,8 @@ from home.views import *
 
 urlpatterns = [
     # path('', contest, name='contest'),
-    # path('', job, name='job'),
-    path('', news, name='news'),
+    path('', job, name='job'),
+    # path('', news, name='news'),
     # path("service/", service, name='service'),
     # path("contact/", contact, name='contact'),
     path('admin/', admin.site.urls),
