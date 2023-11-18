@@ -50,11 +50,25 @@ def job_generator():
             print("Failed to retrieve the webpage. Status code:", response.status_code)
 
 
-
-
-
 def news_generator():
-    pass
+    url = 'https://timesofindia.indiatimes.com/briefs'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'lxml')
+    news = soup.find_all('div', class_='brief_box')
+
+    for new in news:
+        if response.status_code == 200:
+            if new.find('h2'):
+                headline = new.find('h2').find('a').text.strip()
+            if new.find('p'):
+                summary = new.find('p').find('a').text.strip()
+                apply_link = 'https://timesofindia.indiatimes.com/india/bhai-dont-tell-ma-that-im-trapped-in-tunnel/articleshow/105299928.cms'
+            else:
+                print("Anchor tag with class 'headline' not found.")
+
+            News.objects.create(headline = headline, summary = summary, link = apply_link)
+        else:
+            print("Failed to retrieve the webpage. Status code:", response.status_code)
 
 
 

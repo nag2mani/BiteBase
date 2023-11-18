@@ -16,5 +16,5 @@ class Job(models.Model):
 
 class News(models.Model):
     headline = models.CharField(max_length=1000)
-    summary = models.CharField(max_length=100000)
+    summary = models.CharField(max_length=10000000)
     link = models.URLField()
