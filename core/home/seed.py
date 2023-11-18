@@ -63,9 +63,7 @@ def news_generator():
             if new.find('p'):
                 summary = new.find('p').find('a').text.strip()
                 apply_link = 'https://timesofindia.indiatimes.com/india/bhai-dont-tell-ma-that-im-trapped-in-tunnel/articleshow/105299928.cms'
-            else:
-                print("Anchor tag with class 'headline' not found.")
-
+                
             News.objects.create(headline = headline, summary = summary, link = apply_link)
         else:
             print("Failed to retrieve the webpage. Status code:", response.status_code)
