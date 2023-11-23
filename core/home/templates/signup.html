@@ -9,32 +9,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <body style="background-color: rgb(67, 211, 214);">
-    <form class="col-6 mx-auto">
-        <div class="container mt-5 card p-3 shadow-lg">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label font-weight-bold">First Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label font-weight-bold">Last Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label font-weight-bold">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label font-weight-bold">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <p> Have account <a href="/login/">Login</a></p>
-            <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>
-        </div>
-    </form>
+    <section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark"
+        style="min-height: 100vh; background-size: cover; background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1920&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=c0d43804e2c7c93143fe8ff65398c8e9);">
+        <div class="container-fluid">
+            <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
+                <div class="col-12 col-md-4 col-lg-3   h-50 ">
+                    <div class="card shadow">
+                        <div class="card-body mx-auto">
+                            <h4 class="card-title my-4 text-center">Create Account</h4>
+                            <form>
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    </div>
+                                    <input name="" class="form-control" placeholder="Full name" type="text">
+                                </div>
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    </div>
+                                    <input name="" class="form-control" placeholder="Email address" type="email">
+                                </div>
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input class="form-control" placeholder="Create password" type="password">
+                                </div>
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input class="form-control" placeholder="Repeat password" type="password">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                                </div>
+                                <p class="text-center">Have an account?
+                                    <a href="">Log In</a>
+                                </p>
+                            </form>
 
+                            <!-- <p class="text-center">Get started with your free account</p> -->
+                            <p class="text-muted font-weight-bold ">
+                                <span>OR</span>
+                            </p>
+                            <p>
+                                <a href="" class="btn btn-block btn-info">
+                                    <i class="fab fa-google mr-2"></i>Signup via Google</a>
+                                <a href="" class="btn btn-block btn-primary">
+                                    <i class="fab fa-facebook-f mr-2"></i>Signup via facebook</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

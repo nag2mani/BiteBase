@@ -3,123 +3,208 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Breaking News</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="../static/main.css">
+  <title>Jobs</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicon -->
+  <link href="../static/img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="../static/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img src="../static/logo.png" alt="Logo" class="img-fluid" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+  <div class="container-xxl bg-white p-0">
+    <!-- Navbar & Hero Start -->
+    <div class="container-xxl position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+          <h1 class="m-0"><i class="fa fa-search me-2"></i>Bite<span class="fs-5">Base</span></h1>
+          <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
         </button>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="/contest/">Coding Contests</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/job/">Jobs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/news/">Tech News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact/">Contact Us</a>
-            </li>
-          </ul>
-          <div class="d-flex">
-            <a href="/login/" class="btn btn-primary">LogIn</a>
-            <a href="/signup/" class="btn btn-primary">SignUp</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="/" class="nav-item nav-link ">Home</a>
+            <a href="/contest/" class="nav-item nav-link ">Hackathons</a>
+            <a href="/job/" class="nav-item nav-link ">Jobs</a>
+            <a href="/news/" class="nav-item nav-link active">News</a>
+            <a href="/contact/" class="nav-item nav-link">Contact</a>
+          </div>
+          <a href="#" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Pro Version</a>
+        </div>
+      </nav>
+
+      <div class="container-xxl py-5 bg-primary hero-header mb-5">
+        <div class="container my-5 py-5 px-lg-5">
+          <div class="row g-5 py-5">
+            <div class="col-12 text-center">
+              <h1 class="text-white animated zoomIn">Your Daily Source for Informative Headlines and their Summary</h1>
+              <!-- <hr class="bg-white mx-auto mt-0" style="width: 90px;"> -->
+            </div>
           </div>
         </div>
       </div>
-    </nav>
-  </header>
-
-  <div class="body-container">
-    <div class="image-container">
-      <img src="../static/news.jpg" alt="Background Image">
-      <div class="overlay-text">Your Daily Source for Informative Headlines and their Summary</div>
-      <!-- <button class="action-button">Click Me</button> -->
     </div>
+    <!-- Navbar & Hero End -->
 
-    <div class="content-container">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;" >S.No.</th>
-            <th scope="col" style="text-align: center;" >Headline</th>
-            <th scope="col" style="text-align: center;" >Summary</th>
-            <th scope="col" style="text-align: center;" >Link</th>
-          </tr>
-        </thead>
 
-        {% for news in news_list_all %}
+    <!-- Main body for Backend-Frontend starts-->
+    <div class="container-xxl py-5">
+      <div class="container px-lg-5">
+        <div class="content-container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">S.No.</th>
+                <th scope="col" style="text-align: center;">Headline</th>
+                <th scope="col" style="text-align: center;">Summary</th>
+                <th scope="col" style="text-align: center;">Link</th>
+              </tr>
+            </thead>
 
-        <tbody>
-          <tr>
-            <th scope="row" style="text-align: center;" >{{forloop.counter}}</th>
-            <td style="text-align: center;">{{news.headline}}</td>
-            <td style="text-align: center;">{{news.summary}}</td>
-            <td style="text-align: center;" ><a href="{{news.link}}"> More Info</a></td>
-          </tr>
-        </tbody>
-  
-        {%endfor%}
+            {% for news in news_list_all %}
 
-      </table>
-    </div>
-  </div>
+            <tbody>
+              <tr>
+                <th scope="row" style="text-align: center;">{{forloop.counter}}</th>
+                <td style="text-align: center;">{{news.headline}}</td>
+                <td style="text-align: center;">{{news.summary}}</td>
+                <td style="text-align: center;"><a href="{{news.link}}"> More Info</a></td>
+              </tr>
+            </tbody>
 
-  <!-- Section - 5 ; Footer/contacts -->
-  <footer class="footer">
-    <address class="address">
-      <div class="contact">
-        <h3>Contact Us :</h3>
-        <div class="location">
-          <h6>Location :</h6>
-          <ul>
-            <li>Lucknow, Uttar Pradesh 225003</li>
-          </ul>
-        </div>
-        <div class="email">
-          <h6>Email :</h6>
-          <ul>
-            <li>Team22@gmail.com</li>
-          </ul>
+            {%endfor%}
+
+          </table>
         </div>
       </div>
-      <div class="social-media">
-        <h6> Our Social Media Handles :</h6>
-        <a href=#><i class="fab fa-linkedin fa-2x ps-2"></i></a>
-        <a href=#><i class="fas fa-envelope fa-2x ps-2"></i></a>
-        <a href=#><i class="fas fa-globe fa-2x ps-2"></i></a>
-        <a href=#><i class="fab fa-youtube fa-2x ps-2"></i></a>
-      </div>
-    </address>
-    <div class="copyright">
-      <h5>Copyright &copy; Team22 2023. All rights reserved.</h5>
     </div>
-  </footer>
+    <!-- Main body for Backend-Frontend End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-3">
+            <h5 class="text-white mb-4">Get In Touch</h5>
+            <p><i class="fa fa-map-marker-alt me-3"></i>Sitare University, Lucknow 802225</p>
+            <p><i class="fa fa-phone-alt me-3"></i>+91 8969748255</p>
+            <p><i class="fa fa-envelope me-3"></i>nag2mani@gmail.com</p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h5 class="text-white mb-4">Popular Link</h5>
+            <a class="btn btn-link" href="">About Us</a>
+            <a class="btn btn-link" href="">Contact Us</a>
+            <a class="btn btn-link" href="">Privacy Policy</a>
+            <a class="btn btn-link" href="">Terms & Condition</a>
+            <a class="btn btn-link" href="">Career</a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h5 class="text-white mb-4">Project Gallery</h5>
+            <div class="row g-2">
+              <div class="col-4">
+                <img class="img-fluid" src="../static/img/portfolio-1.jpg" alt="Image">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid" src="../static/img/portfolio-2.jpg" alt="Image">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid" src="../static/img/portfolio-3.jpg" alt="Image">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid" src="../static/img/portfolio-4.jpg" alt="Image">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid" src="../static/img/portfolio-5.jpg" alt="Image">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid" src="../static/img/portfolio-6.jpg" alt="Image">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h5 class="text-white mb-4">Newsletter</h5>
+            <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu</p>
+            <div class="position-relative w-100 mt-3">
+              <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email"
+                style="height: 48px;">
+              <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                  class="fa fa-paper-plane text-primary fs-4"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container px-lg-5">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">Bite-Base</a>, All Right Reserved.
+
+              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+              Designed By <a class="border-bottom" href="#">BiteBase Team</a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Home</a>
+                <a href="">Cookies</a>
+                <a href="">Help</a>
+                <a href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
   </div>
 
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"></script>
-  </body>
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
 </body>
 
 </html>
