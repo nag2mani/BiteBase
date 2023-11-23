@@ -23,13 +23,6 @@ body {
     margin-left: 50px;
 }
 
-/* .head div img:hover {
-    transform: translateX(50px) translateY(50px);
-    height: 200px;
-    width: 200px;
-    border-radius: 800px;
-  } */
-
 #main {
     margin: 25px 55px;
     font-size: 20px;
@@ -91,26 +84,6 @@ body {
 .container2 div ul li {
     margin-top: 7.5px;
 }
-
-/* .container2 div ul li {
-    opacity: 0;
-    animation: fadeIn 3s ease-in-out forwards;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-.button-container {
-    display: flex;
-    justify-content: center;
-} */
 
 .container2 div ul li {
   opacity: 0;

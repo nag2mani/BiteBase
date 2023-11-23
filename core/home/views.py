@@ -29,6 +29,9 @@ from home.models import *
 
 
 #for html templates.
+def home(request):
+    return render(request, 'index.html')
+
 def contest(request):
     contests_from_database = Contest.objects.all()
     return render(request, 'contest.html', context={'contest_list_all' : contests_from_database})

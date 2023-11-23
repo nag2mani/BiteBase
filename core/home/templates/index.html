@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contest</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href='../static/job.css'>
 </head>
+
 <body>
-    
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="../static/logo.png" alt="Logo" class="img-fluid" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contest/">Coding Contests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/job/">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news/">Tech News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact/">Contact Us</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <a href="/login/" class="btn btn-primary">LogIn</a>
+            <a href="/signup/" class="btn btn-primary">SignUp</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="body-container">
+    <div class="image-container">
+      <img src="../static/contest.png" alt="Background Image">
+      <div class="overlay-text">Explore and Conquer Coding Contests and Hackathons Worldwide"</div>
+      <!-- <button class="action-button">Click Me</button> -->
+    </div>
+
+    <div class="content-container">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;" >S.No.</th>
+            <th scope="col" style="text-align: center;" >Contest Title</th>
+            <th scope="col" style="text-align: center;" >Website Link</th>
+          </tr>
+        </thead>
+
+        {% for contest in contest_list_all %}
+
+        <tbody>
+          <tr>
+            <th scope="row" style="text-align: center;" >{{forloop.counter}}</th>
+            <td style="text-align: center;">{{contest.title}}</td>
+            <td style="text-align: center;" ><a href="{{contest.link}}">Link</a></td>
+          </tr>
+        </tbody>
+  
+        {%endfor%}
+
+      </table>
+    </div>
+  </div>
+
+  <!-- Section - 5 ; Footer/contacts -->
+  <footer class="footer">
+    <address class="address">
+      <div class="contact">
+        <h3>Contact Us :</h3>
+        <div class="location">
+          <h6>Location :</h6>
+          <ul>
+            <li>Lucknow, Uttar Pradesh 225003</li>
+          </ul>
+        </div>
+        <div class="email">
+          <h6>Email :</h6>
+          <ul>
+            <li>Team22@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="social-media">
+        <h6> Our Social Media Handles :</h6>
+        <a href=#><i class="fab fa-linkedin fa-2x ps-2"></i></a>
+        <a href=#><i class="fas fa-envelope fa-2x ps-2"></i></a>
+        <a href=#><i class="fas fa-globe fa-2x ps-2"></i></a>
+        <a href=#><i class="fab fa-youtube fa-2x ps-2"></i></a>
+      </div>
+    </address>
+    <div class="copyright">
+      <h5>Copyright &copy; Team22 2023. All rights reserved.</h5>
+    </div>
+  </footer>
+  </div>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+  </body>
 </body>
 </html>
