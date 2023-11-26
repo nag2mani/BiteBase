@@ -26,6 +26,7 @@ urlpatterns = [
     path('job/', job, name='job'),
     path('news/', news, name='news'),
     path("login/", login_page, name='login'),
+    path("logout/", logout_page, name='logout'),
     path("signup/", signup, name='signup'),
     path("contact/", contact, name='contact'),
     path('admin/', admin.site.urls),
