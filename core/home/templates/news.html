@@ -14,7 +14,8 @@
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
 
@@ -72,179 +73,131 @@
     <!-- Navbar & Hero End -->
 
 
-    <!-- Main body for Backend-Frontend starts-->
-    <!-- <div class="container-xxl py-5">
-      <div class="container px-lg-5">
-        <div class="content-container">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col" style="text-align: center;">S.No.</th>
-                <th scope="col" style="text-align: center;">Headline</th>
-                <th scope="col" style="text-align: center;">Summary</th>
-                <th scope="col" style="text-align: center;">Link</th>
-              </tr>
-            </thead>
+    <!--Section: News of the day-->
+    <div class="container">
+      <section class="border-bottom pb-4 mb-5">
+        <div class="row gx-5">
+          <div class="col-md-6 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+              <img src="https://mdbootstrap.com/img/new/slides/080.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
 
-            {% for news in news_list_all %}
-
-            <tbody>
-              <tr>
-                <th scope="row" style="text-align: center;">{{forloop.counter}}</th>
-                <td style="text-align: center;">{{news.headline}}</td>
-                <td style="text-align: center;">{{news.summary}}</td>
-                <td style="text-align: center;"><a href="{{news.link}}"> More Info</a></td>
-              </tr>
-            </tbody>
-
-            {%endfor%}
-
-          </table>
+          <div class="col-md-6 mb-4">
+            <span class="badge bg-danger px-2 py-1 mb-3">News of the day</span>
+            <h4><strong>Facilis consequatur eligendi</strong></h4>
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+              eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+              sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+            </p>
+            <!-- <button type="button" class="btn btn-primary">Read more</button> -->
+            <a type="button" class="btn btn-primary" href="">Read morea</a>
+          </div>
         </div>
+      </section>
+    </div>
+    <!--Section: News of the day-->
+
+
+    <!--Section: Content-->
+    <div class="container row">
+      {% for news in news_list_all %}
+      <!-- First Section -->
+      <div class="col-lg-4 col-md-12 mb-lg-4 border mx-auto">
+        <!-- Featured image -->
+        <div class="bg-image hover-overlay shadow-1-strong ripple mb-4 pt-2" data-mdb-ripple-color="light">
+
+          <img src="https://mdbootstrap.com/img/new/fluid/city/0{{ forloop.counter|add:9 }}.jpg" class="img-fluid" />
+
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <!-- Article data -->
+        <div class="row mb-3">
+          <div class="col-6">
+            <a href="" class="text-info">
+              <i class="fas fa-plane"></i>
+              Travels
+            </a>
+          </div>
+          <div class="col-6 text-end">
+            <u> 15.07.2020</u>
+          </div>
+        </div>
+        <!-- Article title and description -->
+        <a href="{{news.link}}" class="text-dark">
+          <h5>{{news.headline}}</h5>
+          <p>{{news.summary}}</p>
+        </a>
+        <!-- <a type="button" class="btn btn-primary" href="">Read morea</a> -->
+        
+      </div>
+    {% endfor %}
+    </div>
+
+      <!-- <div class="col-lg-4 col-md-12 mb-lg-0">
+        <div class="bg-image hover-overlay shadow-1-strong ripple mb-4" data-mdb-ripple-color="light">
+          <img src="https://mdbootstrap.com/img/new/fluid/city/011.jpg" class="img-fluid" />
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6">
+            <a href="" class="text-danger">
+              <i class="fas fa-chart-pie"></i>
+              Business
+            </a>
+          </div>
+          <div class="col-6 text-end">
+            <u> 15.07.2020</u>
+          </div>
+        </div>
+        <a href="" class="text-dark">
+          <h5>This is title of the news3333</h5>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid. Sed
+            id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
+            adipisci iusto nam temporibus modi animi laboriosam?
+          </p>
+        </a>
+      </div>
+
+
+
+      <div class="col-lg-4 col-md-12 mb-lg-0">
+        <div class="bg-image hover-overlay shadow-1-strong ripple mb-4" data-mdb-ripple-color="light">
+          <img src="https://mdbootstrap.com/img/new/fluid/city/018.jpg" class="img-fluid" />
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6">
+            <a href="" class="text-warning">
+              <i class="fas fa-code"></i>
+              Technology
+            </a>
+          </div>
+          <div class="col-6 text-end">
+            <u> 15.07.2020</u>
+          </div>
+        </div>
+        <a href="" class="text-dark">
+          <h5>This is title of the news3333</h5>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid. Sed
+            id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
+            adipisci iusto nam temporibus modi animi laboriosam?
+          </p>
+        </a>
       </div>
     </div> -->
-        <!--Main layout-->
-        <main>
-
-          <!--Section: News of the day-->
-          <div class="container">
-              <section class="border-bottom pb-4 mb-5">
-                  <div class="row gx-5">
-                      <div class="col-md-6 mb-4">
-                          <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
-                              <img src="https://mdbootstrap.com/img/new/slides/080.jpg" class="img-fluid" />
-                              <a href="#!">
-                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                              </a>
-                          </div>
-                      </div>
-  
-                      <div class="col-md-6 mb-4">
-                          <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">News of the day</span>
-                          <h4><strong>Facilis consequatur eligendi</strong></h4>
-                          <p class="text-muted">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-                              eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-                              sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
-                          </p>
-                          <button type="button" class="btn btn-primary">Read more</button>
-                      </div>
-                  </div>
-              </section>
-          </div>
-          <!--Section: News of the day-->
-  
-  
-  
-          <!--Section: Content-->
-          <div class="container d-flex flex-row">
-  
-  
-              <!-- First Section -->
-              <div class="col-lg-4 col-md-12 mb-lg-0">
-                  <!-- Featured image -->
-                  <div class="bg-image hover-overlay shadow-1-strong ripple mb-4" data-mdb-ripple-color="light">
-                      <img src="https://mdbootstrap.com/img/new/fluid/city/113.jpg" class="img-fluid" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                      </a>
-                  </div>
-                  <!-- Article data -->
-                  <div class="row mb-3">
-                      <div class="col-6">
-                          <a href="" class="text-info">
-                              <i class="fas fa-plane"></i>
-                              Travels
-                          </a>
-                      </div>
-                      <div class="col-6 text-end">
-                          <u> 15.07.2020</u>
-                      </div>
-                  </div>
-                  <!-- Article title and description -->
-                  <a href="" class="text-dark">
-                      <h5>This is title of the news3333</h5>
-                      <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid. Sed
-                          id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
-                          adipisci iusto nam temporibus modi animi laboriosam?
-                      </p>
-                  </a>
-              </div>
-  
-  
-  
-              <!-- Second Section -->
-              <div class="col-lg-4 col-md-12 mb-lg-0 mx-1">
-                  <!-- Featured image -->
-                  <div class="bg-image hover-overlay shadow-1-strong ripple mb-4" data-mdb-ripple-color="light">
-                      <img src="https://mdbootstrap.com/img/new/fluid/city/011.jpg" class="img-fluid" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                      </a>
-                  </div>
-                  <!-- Article data -->
-                  <div class="row mb-3">
-                      <div class="col-6">
-                          <a href="" class="text-danger">
-                              <i class="fas fa-chart-pie"></i>
-                              Business
-                          </a>
-                      </div>
-                      <div class="col-6 text-end">
-                          <u> 15.07.2020</u>
-                      </div>
-                  </div>
-                  <!-- Article title and description -->
-                  <a href="" class="text-dark">
-                      <h5>This is title of the news3333</h5>
-                      <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid. Sed
-                          id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
-                          adipisci iusto nam temporibus modi animi laboriosam?
-                      </p>
-                  </a>
-              </div>
-  
-  
-  
-              <!-- third Section -->
-              <div class="col-lg-4 col-md-12 mb-lg-0">
-                  <!-- Featured image -->
-                  <div class="bg-image hover-overlay shadow-1-strong ripple mb-4" data-mdb-ripple-color="light">
-                      <img src="https://mdbootstrap.com/img/new/fluid/city/018.jpg" class="img-fluid" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                      </a>
-                  </div>
-                  <!-- Article data -->
-                  <div class="row mb-3">
-                      <div class="col-6">
-                          <a href="" class="text-warning">
-                              <i class="fas fa-code"></i>
-                              Technology
-                          </a>
-                      </div>
-                      <div class="col-6 text-end">
-                          <u> 15.07.2020</u>
-                      </div>
-                  </div>
-                  <!-- Article title and description -->
-                  <a href="" class="text-dark">
-                      <h5>This is title of the news3333</h5>
-                      <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid. Sed
-                          id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
-                          adipisci iusto nam temporibus modi animi laboriosam?
-                      </p>
-                  </a>
-              </div>
-          </div>
-      </main>
-    <!-- Main body for Backend-Frontend End -->
-
-
-
 
 
 

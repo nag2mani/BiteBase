@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from home.models import *
+from django.db.models import Q
 # Create your views here.
 
 # def home(request):
@@ -33,7 +34,8 @@ def home(request):
     return render(request, 'index.html')
 
 def contest(request):
-    contests_from_database = Contest.objects.all()
+    # contests_from_database = Contest.objects.all()[1:24]
+    contests_from_database = Contest.objects.filter(Q(id__range=(1, 24)) | Q(id__range=(131, 200)))
     return render(request, 'contest.html', context={'contest_list_all' : contests_from_database})
 
 
@@ -43,7 +45,7 @@ def job(request):
 
 
 def news(request):
-    news_from_database = News.objects.all()
+    news_from_database = News.objects.all()[1:61]
     return render(request, 'news.html', context={'news_list_all' : news_from_database})
 
 
