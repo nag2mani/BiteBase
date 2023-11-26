@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Contest(models.Model):
@@ -15,6 +16,7 @@ class Job(models.Model):
 
 
 class News(models.Model):
+    user = models.ForeignKey(User, on_delete = models.SET_NULL, null = True, blank = True)
     headline = models.CharField(max_length=1000)
     summary = models.CharField(max_length=10000000)
     link = models.URLField()
