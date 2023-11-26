@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from home.models import *
 from django.db.models import Q
+from django.contrib import messages
+
 # Create your views here.
 
 # def home(request):
@@ -59,6 +61,30 @@ def login(request):
 
 
 def signup(request):
+
+    if request.method == "POST":
+        first_name = request.POST.get('first_name')
+        email = request.POST.get('email')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = User.objects.filter(username = username)
+
+        if user.exists():
+            messages.info(request, "Username already taken")
+            return redirect("/signup/")
+
+        User.objects.create_user(
+            first_name = first_name,
+            email = email,
+            username = username,
+            password=password
+        )
+
+        messages.info(request, "Account Created Successfully")
+
+        return redirect("/signup/")
+
     return render(request, 'signup.html')
 
 
