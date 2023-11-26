@@ -70,37 +70,65 @@
     </div>
     <!-- Navbar & Hero End -->
 
+    <!--Section: News of the day-->
+    <div class="container">
+      <section class="border-bottom pb-4 mb-5">
+        <div class="row gx-5">
+          <div class="col-md-6 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+              <img src="https://mdbootstrap.com/img/new/slides/080.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <span class="badge bg-danger px-2 py-1 mb-3">Job of the Week</span>
+            <h4><strong>Facilis consequatur eligendi</strong></h4>
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+              eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+              sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+            </p>
+            <!-- <button type="button" class="btn btn-primary">Read more</button> -->
+            <a type="button" class="btn btn-primary" href="">Read morea</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--Section: News of the day-->
 
     <!-- Main body for Backend-Frontend starts-->
     <div class="container-xxl py-5">
       <div class="container px-lg-5">
-          <div class="content-container">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col" style="text-align: center;" >S.No.</th>
-                  <th scope="col" style="text-align: center;" >Company Name</th>
-                  <th scope="col" style="text-align: center;" >Skill Required</th>
-                  <th scope="col" style="text-align: center;" >Apply Link</th>
-                </tr>
-              </thead>
-      
-              {% for job in job_list_all %}
-      
-              <tbody>
-                <tr>
-                  <th scope="row" style="text-align: center;" >{{forloop.counter}}</th>
-                  <td style="text-align: center;">{{job.company_name}}</td>
-                  <td style="text-align: center;">{{job.skills}}</td>
-                  <td style="text-align: center;" ><a href="{{job.apply_link}}"> Apply </a></td>
-                </tr>
-              </tbody>
-        
-              {%endfor%}
-      
-            </table>
-          </div>
+        <div class="content-container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">S.No.</th>
+                <th scope="col" style="text-align: center;">Company Name</th>
+                <th scope="col" style="text-align: center;">Skill Required</th>
+                <th scope="col" style="text-align: center;">Apply Link</th>
+              </tr>
+            </thead>
+
+            {% for job in job_list_all %}
+
+            <tbody>
+              <tr>
+                <th scope="row" style="text-align: center;">{{forloop.counter}}</th>
+                <td style="text-align: center;">{{job.company_name}}</td>
+                <td style="text-align: center;">{{job.skills}}</td>
+                <td style="text-align: center;"><a href="{{job.apply_link}}"> Apply </a></td>
+              </tr>
+            </tbody>
+
+            {%endfor%}
+
+          </table>
         </div>
+      </div>
     </div>
   </div>
   <!-- Main body for Backend-Frontend End -->
