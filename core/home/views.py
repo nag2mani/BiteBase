@@ -34,8 +34,10 @@ def home(request):
     return render(request, 'index.html')
 
 def contest(request):
-    # contests_from_database = Contest.objects.all()[1:24]
-    contests_from_database = Contest.objects.filter(Q(id__range=(1, 24)) | Q(id__range=(131, 200)))
+    
+    # contests_from_database = Contest.objects.all()   ##If you want to use all object.
+    # contests_from_database = Contest.objects.all()[1:24]   ##If you want to object in some range.
+    contests_from_database = Contest.objects.filter(Q(id__range=(1, 24)) | Q(id__range=(131, 200)))  # if we need multiple slices.
     return render(request, 'contest.html', context={'contest_list_all' : contests_from_database})
 
 
