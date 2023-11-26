@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from home.models import *
 from django.db.models import Q
 from django.contrib import messages
-
+from django.contrib.auth import authenticate, login  #login for storing session.
 # Create your views here.
 
 # def home(request):
@@ -56,7 +56,25 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def login(request):
+def login_page(request):
+
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        if not User.objects.filter(username = username).exists():
+            messages.info(request, "Invalid Username")
+            return redirect("/login/")
+        
+        user = authenticate(username = username, password = password)
+
+        if user is None:
+            messages.info(request, "Invalid Password")
+            return redirect("/login/") 
+        else:
+            login(request, user)
+            return redirect("/news/")
+
     return render(request, 'login.html')
 
 
@@ -86,7 +104,5 @@ def signup(request):
             return redirect("/signup/")
 
     return render(request, 'signup.html')
-
-
 
 

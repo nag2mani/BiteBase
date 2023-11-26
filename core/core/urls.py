@@ -25,7 +25,7 @@ urlpatterns = [
     path('contest/', contest, name='contest'),
     path('job/', job, name='job'),
     path('news/', news, name='news'),
-    path("login/", login, name='login'),
+    path("login/", login_page, name='login'),
     path("signup/", signup, name='signup'),
     path("contact/", contact, name='contact'),
     path('admin/', admin.site.urls),
