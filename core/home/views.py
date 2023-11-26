@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from home.models import *
 from django.db.models import Q
 from django.contrib import messages
-from django.contrib.auth import authenticate, login  #login for storing session.
+from django.contrib.auth import authenticate, login, logout #login for storing session.
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 # def home(request):
@@ -46,7 +47,7 @@ def job(request):
     jobs_from_database = Job.objects.all()
     return render(request, 'job.html', context={'job_list_all' : jobs_from_database})
 
-
+@login_required(login_url="/login/")
 def news(request):
     news_from_database = News.objects.all()[1:61]
     return render(request, 'news.html', context={'news_list_all' : news_from_database})
@@ -65,7 +66,7 @@ def login_page(request):
         if not User.objects.filter(username = username).exists():
             messages.info(request, "Invalid Username")
             return redirect("/login/")
-        
+
         user = authenticate(username = username, password = password)
 
         if user is None:
@@ -76,6 +77,11 @@ def login_page(request):
             return redirect("/news/")
 
     return render(request, 'login.html')
+
+
+def logout_page(request):
+    logout(request)
+    return redirect("/login/")
 
 
 def signup(request):
@@ -104,5 +110,6 @@ def signup(request):
             return redirect("/signup/")
 
     return render(request, 'signup.html')
+
 
 
