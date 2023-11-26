@@ -72,18 +72,18 @@ def signup(request):
 
         if user.exists():
             messages.info(request, "Username already taken")
+            # messages.warning(request, "Username already taken")
             return redirect("/signup/")
 
-        User.objects.create_user(
-            first_name = first_name,
-            email = email,
-            username = username,
-            password=password
-        )
-
-        messages.info(request, "Account Created Successfully")
-
-        return redirect("/signup/")
+        else:
+            User.objects.create_user(
+                first_name = first_name,
+                email = email,
+                username = username,
+                password=password
+            )
+            messages.info(request, "Account Created Successfully")
+            return redirect("/signup/")
 
     return render(request, 'signup.html')
 
