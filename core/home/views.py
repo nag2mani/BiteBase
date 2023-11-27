@@ -136,6 +136,20 @@ def signup(request):
 
 @login_required(login_url="/login/")
 def add_your_news(request):
+    if request.method == "POST":
+        headline = request.POST.get('headline')
+        link = request.POST.get('link')
+        summary = request.POST.get('summary')
+
+        Add_your_news.objects.create(
+            headline = headline,
+            link = link,
+            summary = summary,
+            )
+        
+        messages.info(request, "Congratulations! Your news added.")
+
+        return redirect("/news/")
     return render(request, 'add_your_news.html')
 
 

@@ -23,14 +23,15 @@
                             
                               {% csrf_token %}
 
-                              <!-- {% if messages %}
+                              {% if messages %}
                               {{ message.tags }}
                               <div class="alert alert-primary font-weight-bold" role="alert">
                                   {% for message in messages %}
                                   {{ message }}
                                   {% endfor %}
                               </div>
-                              {% endif %} -->
+                              {% endif %}
+
                               <div class="col">
                                   <div class="col-md-12 my-3">
                                       <div class="form-floating">
@@ -46,7 +47,7 @@
                                   </div>
                                   <div class="col-12 my-3">
                                       <div class="form-floating">
-                                          <textarea class="form-control" name="q_message" placeholder="News Summary" id="message" style="height: 150px"></textarea>
+                                          <textarea class="form-control" name="summary" placeholder="News Summary" id="message" style="height: 150px"></textarea>
                                           <label for="message">News Summary (max_word = 20) </label>
                                       </div>
                                   </div>
