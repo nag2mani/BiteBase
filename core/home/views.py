@@ -134,6 +134,8 @@ def signup(request):
 
 
 
-
+@login_required(login_url="/login/")
+def add_your_news(request):
+    return render(request, 'add_your_news.html')
 
 

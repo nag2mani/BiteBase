@@ -29,6 +29,7 @@ urlpatterns = [
     path("logout/", logout_page, name='logout'),
     path("signup/", signup, name='signup'),
     path("contact/", contact, name='contact'),
+    path("add_your_news/", add_your_news, name='add_your_news'),
     path('admin/', admin.site.urls),
 ]
 
