@@ -139,7 +139,7 @@ def add_your_news(request):
         headline = request.POST.get('headline')
         link = request.POST.get('link')
         summary = request.POST.get('summary')
-        image = request.POST.get('image')
+        image = request.FILES.get('image')
 
         Add_your_news.objects.create(
             headline = headline,
@@ -150,7 +150,9 @@ def add_your_news(request):
         
         messages.info(request, "Congratulations! Your news added.")
 
-        return redirect("/news/")
-    return render(request, 'add_your_news.html')
+        return redirect("/add_your_news/")
+
+    ads_news = Add_your_news.objects.all().order_by('-pk').first()
+    return render(request, 'add_your_news.html', context={'ads_news' : ads_news})
 
 
