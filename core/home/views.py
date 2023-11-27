@@ -133,18 +133,19 @@ def signup(request):
 
 
 
-
 @login_required(login_url="/login/")
 def add_your_news(request):
     if request.method == "POST":
         headline = request.POST.get('headline')
         link = request.POST.get('link')
         summary = request.POST.get('summary')
+        image = request.POST.get('image')
 
         Add_your_news.objects.create(
             headline = headline,
             link = link,
             summary = summary,
+            image = image
             )
         
         messages.info(request, "Congratulations! Your news added.")

@@ -27,3 +27,10 @@ class Contact(models.Model):
     q_email = models.EmailField()
     q_subject = models.CharField(max_length=1000)
     q_message = models.CharField(max_length=10000000)
+
+
+class Add_your_news(models.Model):
+        headline = models.CharField(max_length=1000)
+        link = models.URLField()
+        summary = models.CharField(max_length=10000000)
+        image = models.ImageField()
