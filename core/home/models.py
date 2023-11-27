@@ -34,3 +34,5 @@ class Add_your_news(models.Model):
         link = models.URLField()
         summary = models.CharField(max_length=10000000)
         image = models.ImageField(upload_to="ads_image")
+
+
