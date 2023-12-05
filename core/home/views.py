@@ -5,6 +5,8 @@ from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout #login for storing session.
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+import razorpay
 # Create your views here.
 
 # def home(request):
@@ -48,10 +50,22 @@ def job(request):
     jobs_from_database = Job.objects.all()
     return render(request, 'job.html', context={'job_list_all' : jobs_from_database})
 
+
 @login_required(login_url="/login/")
 def news(request):
+    news_obj = User.objects.filter(username = 'username')
+
+    client = razorpay.Client(auth = (settings.KEY_ID, settings.SECRET_KEY))
+    payment = client.order.create({'amount' : 100, 'currency':'INR', 'payment_capture':1})
+    news_obj.razor_pay_order_id = payment['id']
+    # news_obj.save()
+    # print(payment)
+
     news_from_database = News.objects.all()[1:61]
-    return render(request, 'news.html', context={'news_list_all' : news_from_database})
+    ads_news = Add_your_news.objects.all().order_by('-pk').first()  #to find latest insertiond
+
+    context={'news_list_all' : news_from_database, 'ads_news' : ads_news, 'payment' : payment}
+    return render(request, 'news.html', context)
 
 
 
@@ -152,7 +166,6 @@ def add_your_news(request):
 
         return redirect("/add_your_news/")
 
-    ads_news = Add_your_news.objects.all().order_by('-pk').first()
-    return render(request, 'add_your_news.html', context={'ads_news' : ads_news})
+    return render(request, 'add_your_news.html')
 
 

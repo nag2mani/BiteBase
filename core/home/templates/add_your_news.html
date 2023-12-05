@@ -19,10 +19,8 @@
               <div class="row justify-content-center">
                   <div class="col-lg-7">
                       <div class="wow fadeInUp" data-wow-delay="0.3s">
-                          <form method="post">
-                            
-                              {% csrf_token %}
-
+                          <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
                               {% if messages %}
                               {{ message.tags }}
                               <div class="alert alert-primary font-weight-bold" role="alert">
@@ -48,7 +46,7 @@
                                   <div class="col-12 my-3">
                                       <div class="form-floating">
                                           <textarea class="form-control" name="summary" placeholder="News Summary" id="message" style="height: 150px"></textarea>
-                                          <label for="message">News Summary (max_word = 20) </label>
+                                          <label for="message">News Summary (max_word = 30) </label>
                                       </div>
                                   </div>
 

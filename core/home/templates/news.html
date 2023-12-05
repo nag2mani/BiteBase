@@ -1,150 +1,117 @@
 {% extends 'base.html' %}
 {% block start %}
 
-      <div class="container-xxl py-5 bg-primary hero-header mb-5">
-        <div class="container my-5 py-5 px-lg-5">
-          <div class="row g-5 py-5">
-            <div class="col-12 text-center">
-              <h1 class="text-white animated zoomIn">Your Daily Source for Informative Headlines and their Summary</h1>
-              <!-- <hr class="bg-white mx-auto mt-0" style="width: 90px;"> -->
-            </div>
-          </div>
-        </div>
+<div class="container-xxl py-5 bg-primary hero-header mb-5">
+  <div class="container my-5 py-5 px-lg-5">
+    <div class="row g-5 py-5">
+      <div class="col-12 text-center">
+        <h1 class="text-white animated zoomIn">Your Daily Source for Informative Headlines and their Summary</h1>
       </div>
     </div>
-    <!-- Navbar & Hero End -->
+  </div>
+</div>
+</div>
 
 
-    <!--Section: News of the day-->
-    <div class="container">
-      <section class="border-bottom pb-4 mb-5">
-        <div class="row gx-5">
-          <div class="col-md-6 mb-4">
-            <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
-              <img src="../image/{{ads_news.image}}" class="img-fluid" />
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-4">
-            <span class="badge bg-danger px-2 py-1 mb-3">News of the day</span>
-            <h4><strong>{{ads_news.headline}}</strong></h4>
-            <p class="text-muted">
-              <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-              eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-              sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis. -->
-              {{ads_news.summary}}
-            </p>
-            <!-- <button type="button" class="btn btn-primary">Read more</button> -->
-            <a type="button" class="btn btn-primary" href="{{ads_news.link}}">Read more</a>
-          </div>
-        </div>
-      </section>
-    </div>
-    <!--Section: News of the day-->
-
-
-    <!--Section: Content-->
-    <div class="container row">
-      {% for news in news_list_all %}
-      <!-- First Section -->
-      <div class="col-lg-4 col-md-12 mb-lg-4 border mx-auto">
-        <!-- Featured image -->
-        <div class="bg-image hover-overlay shadow-1-strong ripple mb-4 pt-2" data-mdb-ripple-color="light">
-
-          <img src="https://mdbootstrap.com/img/new/fluid/city/0{{ forloop.counter|add:9 }}.jpg" class="img-fluid" />
-
+<div class="container">
+  <section class="border-bottom pb-4 mb-5">
+    <div class="row gx-5">
+      <div class="col-md-6 mb-4">
+        <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+          <img src="/media/{{ads_news.image}}" class="img-fluid" />
           <a href="#!">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
           </a>
         </div>
-        <!-- Article data -->
-        <div class="row mb-3">
-          <div class="col-6">
-            <a href="" class="text-info">
-              <i class="fas fa-plane"></i>
-              Travels
-            </a>
-          </div>
-          <div class="col-6 text-end">
-            <u> 15.07.2020</u>
-          </div>
-        </div>
-        <!-- Article title and description -->
-        <a href="{{news.link}}" class="text-dark">
-          <h5>{{news.headline}}</h5>
-          <p>{{news.summary}}</p>
-        </a>
-        <!-- <a type="button" class="btn btn-primary" href="">Read morea</a> -->
-        
       </div>
-    {% endfor %}
+
+      <div class="col-md-6 mb-4 text-center">
+        <span class="badge bg-danger px-2 py-1 mb-3">News of the day</span>
+        <h4><strong>{{ads_news.headline}}</strong></h4>
+        <p class="text-muted">
+          {{ads_news.summary}}
+        </p>
+        <a type="button" class="btn btn-primary" href="{{ads_news.link}}">Read more</a>
+      </div>
+      </div>
+  </section>
+</div>
+<!--Section: News of the day-->
+
+
+<!--Section: Content-->
+<div class="container row">
+  {% for news in news_list_all %}
+  <!-- First Section -->
+  <div class="col-lg-4 col-md-12 mb-lg-4 border mx-auto">
+    <!-- Featured image -->
+    <div class="bg-image hover-overlay shadow-1-strong ripple mb-4 pt-2" data-mdb-ripple-color="light">
+
+      <img src="https://mdbootstrap.com/img/new/fluid/city/0{{ forloop.counter|add:9 }}.jpg" class="img-fluid" />
+
+      <a href="#!">
+        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+      </a>
     </div>
-
-      <!-- <div class="col-lg-4 col-md-12 mb-lg-0">
-        <div class="bg-image hover-overlay shadow-1-strong ripple mb-4" data-mdb-ripple-color="light">
-          <img src="https://mdbootstrap.com/img/new/fluid/city/011.jpg" class="img-fluid" />
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
-        </div>
-        <div class="row mb-3">
-          <div class="col-6">
-            <a href="" class="text-danger">
-              <i class="fas fa-chart-pie"></i>
-              Business
-            </a>
-          </div>
-          <div class="col-6 text-end">
-            <u> 15.07.2020</u>
-          </div>
-        </div>
-        <a href="" class="text-dark">
-          <h5>This is title of the news3333</h5>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid. Sed
-            id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
-            adipisci iusto nam temporibus modi animi laboriosam?
-          </p>
+    <!-- Article data -->
+    <div class="row mb-3">
+      <div class="col-6">
+        <a href="" class="text-info">
+          <i class="fas fa-plane"></i>
+          Travels
         </a>
       </div>
-
-
-
-      <div class="col-lg-4 col-md-12 mb-lg-0">
-        <div class="bg-image hover-overlay shadow-1-strong ripple mb-4" data-mdb-ripple-color="light">
-          <img src="https://mdbootstrap.com/img/new/fluid/city/018.jpg" class="img-fluid" />
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
-        </div>
-        <div class="row mb-3">
-          <div class="col-6">
-            <a href="" class="text-warning">
-              <i class="fas fa-code"></i>
-              Technology
-            </a>
-          </div>
-          <div class="col-6 text-end">
-            <u> 15.07.2020</u>
-          </div>
-        </div>
-        <a href="" class="text-dark">
-          <h5>This is title of the news3333</h5>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, iste aliquid. Sed
-            id nihil magni, sint vero provident esse numquam perferendis ducimus dicta
-            adipisci iusto nam temporibus modi animi laboriosam?
-          </p>
-        </a>
+      <div class="col-6 text-end">
+        <u> 15.07.2020</u>
       </div>
-    </div> -->
+    </div>
+    <!-- Article title and description -->
+    <a href="{{news.link}}" class="text-dark">
+      <h5>{{news.headline}}</h5>
+      <p>{{news.summary}}</p>
+    </a>
+    <!-- <a type="button" class="btn btn-primary" href="">Read morea</a> -->
 
+  </div>
+  {% endfor %}
+</div>
 
-   <div class="text-center">
-      <h2>Put your own News on the top of the page</h2>
-      <a type="button" class="btn btn-primary" href="/add_your_news/">Add News of the day</a>
-   </div>
+<div class="text-center">
+  <h2>Put your own News on the top of the page</h2>
+  <button id="rzp-button1" type="button" class="btn btn-primary" > Add News of the day </button>
+</div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  var options = {
+      "key": "rzp_test_RwHyuhef14CZBt", // Enter the Key ID generated from the Dashboard
+      "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "currency": "INR",
+      "name": "Neuracave", //your business name
+      "description": "Purchase",
+      "image": "https://example.com/your_logo",
+      "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "handler": function (response){
+        window.location.href = "http://127.0.0.1:8000/add_your_news/"
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature)
+          },
+      "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+          "name": "Nagmani Kumar", //your customer's name
+          "email": "nag2mani@example.com",
+          "contact": "8969748255" //Provide the customer's phone number for better conversion rates 
+      },
+      "notes": {
+          "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+          "color": "#3399cc"
+      }
+  };
+  var rzp1 = new Razorpay(options);
+  document.getElementById('rzp-button1').onclick = function(e){
+      rzp1.open();
+      e.preventDefault();
+  }
+  </script>
 {%endblock%}

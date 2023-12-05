@@ -17,6 +17,11 @@ class Job(models.Model):
 
 class News(models.Model):
     user = models.ForeignKey(User, on_delete = models.SET_NULL, null = True, blank = True)
+
+    razor_pay_order_id = models.CharField(max_length=100, null=True, blank=True)
+    razor_pay_payment_id = models.CharField(max_length=100, null=True, blank=True)
+    razor_pay_patment_signature = models.CharField(max_length=100, null=True, blank=True)
+
     headline = models.CharField(max_length=1000)
     summary = models.CharField(max_length=10000000)
     link = models.URLField()
