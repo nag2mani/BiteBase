@@ -9,7 +9,6 @@ from django.conf import settings
 import razorpay
 
 
-
 def home(request):
     return render(request, 'index.html')
 
