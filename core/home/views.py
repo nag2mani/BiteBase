@@ -144,3 +144,6 @@ def add_your_news(request):
     return render(request, 'add_your_news.html')
 
 
+
+
+
