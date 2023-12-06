@@ -7,36 +7,12 @@ from django.contrib.auth import authenticate, login, logout #login for storing s
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 import razorpay
-# Create your views here.
-
-# def home(request):
-#     return HttpResponse("""
-# <h1> I am a Django Server</h1>
-# <h2 style = "color:red" > I am working on good</h2>
-# <p> I am a Django Server with some paragraph</p>
-#    """)
-
-# def contact(request):
-#     return HttpResponse("""
-# <h1> I am a Django Server of success page</h1>
-# <h2 style = "color:blue" > I am working on success page </h2>
-# <p> I am a Django Server with some paragraph</p>
-#    """)
 
 
 
-# peoples = [
-#     {'name':'Nagmani', 'age':22},
-#     {'name':'Nagu', 'age':21},
-#     {'name':'Mani', 'age':12},
-#     {'name':'Kajal', 'age':18},
-#     {'name':'Dadu', 'age':20}
-# ]
-
-
-#for html templates.
 def home(request):
     return render(request, 'index.html')
+
 
 @login_required(login_url="/login/")
 def contest(request):
@@ -44,6 +20,7 @@ def contest(request):
     # contests_from_database = Contest.objects.all()[1:24]   ##If you want to object in some range.
     contests_from_database = Contest.objects.filter(Q(id__range=(1, 24)) | Q(id__range=(131, 206)))  # if we need multiple slices.
     return render(request, 'contest.html', context={'contest_list_all' : contests_from_database})
+
 
 @login_required(login_url="/login/")
 def job(request):
@@ -58,8 +35,6 @@ def news(request):
     client = razorpay.Client(auth = (settings.KEY_ID, settings.SECRET_KEY))
     payment = client.order.create({'amount' : 100, 'currency':'INR', 'payment_capture':1})
     news_obj.razor_pay_order_id = payment['id']
-    # news_obj.save()
-    # print(payment)
 
     news_from_database = News.objects.all()[1:61]
     ads_news = Add_your_news.objects.all().order_by('-pk').first()  #to find latest insertiond
