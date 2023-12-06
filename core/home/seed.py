@@ -1,6 +1,3 @@
-#It will generate data and add to the database.
-
-# sourcery skip: merge-dict-assign, use-named-expression
 import requests
 from bs4 import BeautifulSoup
 from home.models import *
@@ -67,8 +64,3 @@ def news_generator():
             News.objects.create(headline = headline, summary = summary, link = apply_link)
         else:
             print("Failed to retrieve the webpage. Status code:", response.status_code)
-
-
-
-
-
