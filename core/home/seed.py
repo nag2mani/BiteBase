@@ -70,17 +70,5 @@ def news_generator():
 
 
 
-# Language converter
-# pip install translitcodec
-# from translitcodec import translit
-
-# cyrillic_text = "Национальн"
-
-# # Convert Cyrillic to English
-# english_text = translit(cyrillic_text, 'ru', reversed=True)
-
-# print(english_text)
-
-
 
 
