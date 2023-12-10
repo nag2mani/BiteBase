@@ -135,4 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 KEY_ID = 'rzp_test_RwHyuhef14CZBt'
-SECRET_KEY = 'qiommUAn4iMctQsgNpbOEY25'
+SECRET_KEY = ''
