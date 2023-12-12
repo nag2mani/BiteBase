@@ -14,7 +14,3 @@ TechStack used;
 5. Python
 6. Django
 7. SQL
-
-
-Contributed by;
-Nagmani, Rambaran, Amit
