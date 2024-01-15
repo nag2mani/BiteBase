@@ -14,3 +14,9 @@ TechStack used;
 5. Python
 6. Django
 7. SQL
+
+
+Team:
+Nagmani Kumar [Team Lead]
+Ram Bhanwar Bhadiyar [FrontEnd Developer]
+Amit Diwakar [FrontEnd Developer]
