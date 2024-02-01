@@ -1,9 +1,9 @@
 Application Name : NewsFeed
 
 Features;
-1. Scrap hackathons and coding contest data from diffrent website and send it to database then take data from database and send it to frontend for end user.
-2. Similarly, take job data from diffrent websites and show it.
-3. Similarly, take news article and show with their headline and summary.
+1. Scrap hackathons and coding contest data from diffrent websites across the globe and send it to my database then take data from database and send it to frontend for end user.
+2. Similarly, It takes job data from diffrent websites and send it to frontend for end user.
+3. Similarly, It takes news article and show with their headline and summary.
 
 
 TechStack used;
@@ -14,6 +14,7 @@ TechStack used;
 5. Python
 6. Django
 7. SQL
+
 
 
 Team:
