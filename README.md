@@ -18,6 +18,7 @@ TechStack used;
 
 
 Team:
-Nagmani Kumar [Team Lead], 
+Nagmani Kumar Team Lead [Backend and ML], 
 Ram Bhanwar Bhadiyar [FrontEnd Developer], 
-Amit Diwakar [FrontEnd Developer]
+Amit Diwakar [UI/UX Designer]
+
