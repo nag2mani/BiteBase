@@ -138,4 +138,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 KEY_ID = 'rzp_test_RwHyuhef14CZBt'
 # SECRET_KEY = os.getenv('SECRET_KEY_RAZORPAY')
-SECRET_KEY = 'v'
+SECRET_KEY = ''

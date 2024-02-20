@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from home.models import *
 
-
 def contest_generator():
     url = 'https://clist.by/'
     response = requests.get(url)
@@ -10,7 +9,6 @@ def contest_generator():
     title_search_tags = soup.find_all('a', class_='title_search')
 
     # contest_list = []
-
     for title_search_tag in title_search_tags:
         if response.status_code == 200:
             if title_search_tag:
