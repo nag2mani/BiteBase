@@ -1,5 +1,4 @@
 annotated-types==0.6.0
-apturl==0.5.2
 asgiref==3.7.2
 asttokens==2.4.1
 autograd==1.6.2
