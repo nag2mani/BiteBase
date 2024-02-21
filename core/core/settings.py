@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-x5h^8a$l2s#qt6c%9ugq_16qllxt*ymal&vivw#p-1si2zffnu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost','bitebase.onrender.com']
 
 
 # Application definition
