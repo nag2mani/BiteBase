@@ -136,6 +136,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # load_dotenv()
 
-KEY_ID = 'rzp_test_RwHyuhef14CZBt'
+KEY_ID="rzp_test_kRKmXIu82zMfJ1"
 # SECRET_KEY = os.getenv('SECRET_KEY_RAZORPAY')
-SECRET_KEY = 'v'
+SECRET_KEY="mNdwGKAje4oeteHszcN7gUXc"
+
+
+

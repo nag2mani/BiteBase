@@ -33,7 +33,7 @@
         </p>
         <a type="button" class="btn btn-primary" href="{{ads_news.link}}">Read more</a>
       </div>
-      </div>
+    </div>
   </section>
 </div>
 <!--Section: News of the day-->
@@ -78,40 +78,41 @@
 
 <div class="text-center">
   <h2>Put your own News on the top of the page</h2>
-  <button id="rzp-button1" type="button" class="btn btn-primary" > Add News of the day </button>
+  <button id="rzp-button1" type="button" class="btn btn-primary"> Add News of the day </button>
 </div>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
   var options = {
-      "key": "rzp_test_RwHyuhef14CZBt", // Enter the Key ID generated from the Dashboard
-      "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-      "currency": "INR",
-      "name": "Neuracave", //your business name
-      "description": "Purchase",
-      "image": "https://example.com/your_logo",
-      "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "handler": function (response){
-        window.location.href = "http://127.0.0.1:8000/add_your_news/"
-        // alert(response.razorpay_payment_id);
-        // alert(response.razorpay_order_id);
-        // alert(response.razorpay_signature)
-          },
-      "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
-          "name": "Nagmani Kumar", //your customer's name
-          "email": "nag2mani@example.com",
-          "contact": "8969748255" //Provide the customer's phone number for better conversion rates 
-      },
-      "notes": {
-          "address": "Razorpay Corporate Office"
-      },
-      "theme": {
-          "color": "#3399cc"
-      }
+    "key": "rzp_test_kRKmXIu82zMfJ1", // Enter the Key ID generated from the Dashboard
+    "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Nagmani", //your business name
+    "description": "Purchase",
+    "image": "https://example.com/your_logo",
+    "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response) {
+      window.location.href = "http://127.0.0.1:8000/add_your_news/"
+      // alert(response.razorpay_payment_id);
+      // alert(response.razorpay_order_id);
+      // alert(response.razorpay_signature)
+    },
+    "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+      "name": "Nagmani Kumar", //your customer's name
+      "email": "nag2mani@example.com",
+      "contact": "8969748255" //Provide the customer's phone number for better conversion rates 
+    },
+    "notes": {
+      "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+      "color": "#3399cc"
+    }
   };
   var rzp1 = new Razorpay(options);
-  document.getElementById('rzp-button1').onclick = function(e){
-      rzp1.open();
-      e.preventDefault();
+
+  document.getElementById('rzp-button1').onclick = function (e) {
+    rzp1.open();
+    // e.preventDefault();
   }
-  </script>
+</script>
 {%endblock%}

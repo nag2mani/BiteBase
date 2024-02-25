@@ -8,7 +8,6 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 import razorpay
 
-
 def home(request):
     return render(request, 'index.html')
 
@@ -31,15 +30,16 @@ def job(request):
 def news(request):
     news_obj = User.objects.filter(username = 'username')
 
-    ## When you use razorpay API key then uncomment these three lines as well as keep context line which have payments.
-    # client = razorpay.Client(auth = (settings.KEY_ID, settings.SECRET_KEY))
-    # payment = client.order.create({'amount' : 100, 'currency':'INR', 'payment_capture':1})
-    # news_obj.razor_pay_order_id = payment['id']
+    # When you use razorpay API key then uncomment these three lines as well as keep context line which have payments.
+    client = razorpay.Client(auth = (settings.KEY_ID, settings.SECRET_KEY))
+    payment = client.order.create({'amount' :100, 'currency':'INR', 'payment_capture':1})
+    # payment = client.order.create(amount=100, currency="INR", payment_capture=1)
+    news_obj.razor_pay_order_id = payment['id']
 
     news_from_database = News.objects.all()[1:61]
     ads_news = Add_your_news.objects.all().order_by('-pk').first()  #to find latest insertiond
 
-    # context={'news_list_all' : news_from_database, 'ads_news' : ads_news, 'payment' : payment}
+    context={'news_list_all' : news_from_database, 'ads_news' : ads_news, 'payment' : payment}
     context={'news_list_all' : news_from_database, 'ads_news' : ads_news}
     return render(request, 'news.html', context)
 
