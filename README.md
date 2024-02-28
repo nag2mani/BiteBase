@@ -1,4 +1,5 @@
 Application Name: NewsFeed
+
 Website Link: https://bitebase.onrender.com/
 
 Features;
@@ -15,6 +16,7 @@ TechStack used;
 5. Python
 6. Django
 7. SQL
+8. Machine Learning Model
 
 
 
