@@ -1,0 +1,137 @@
+body {
+    margin: 0px 20vw;
+}
+
+.main_container {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 140vh;
+    border: 5px solid black;
+    background-color: rgb(131, 188, 229);
+}
+
+.head {
+    display: flex;
+    height: 160px;
+}
+
+.head div img {
+    height: 150px;
+    width: 150px;
+    border-radius: 600px;
+    margin-left: 50px;
+}
+
+#main {
+    margin: 25px 55px;
+    font-size: 20px;
+    margin-left: 49px;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin-top: 20px;
+}
+
+.grd {
+    width: 45vh;
+    border: 2px solid black;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 17px;
+    background-color: #3ae89d;
+}
+
+.grd:hover {
+    transform: translateX(10px) translateY(-5px);
+  }
+
+.item {
+    padding: 10px;
+    margin: 15px;
+    border: 1px solid black;
+}
+
+.container2 {
+    display: flex;
+    border: 1px solid black;
+    background-color: rgb(224, 219, 81);
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 66px;
+    width: auto;
+    padding: 5px;
+}
+
+.head1 {
+    font-size: 20px bold;
+    padding: 2px;
+}
+
+.container2 div div {
+    margin-left: 25px;
+    font-size: 20px;
+}
+
+.container2 div ul {
+    list-style-type: decimal;
+    margin-top: 4px;
+}
+
+.container2 div ul li {
+    margin-top: 7.5px;
+}
+
+.container2 div ul li {
+  opacity: 0;
+  animation: comeDown 0.5s ease-in-out forwards;
+}
+
+.container2 div ul li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.container2 div ul li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.container2 div ul li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes comeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.button {
+    padding: 10px 20px;
+    margin: 12px;
+    border: none;
+    border-radius: 400px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #d7419b;
+    transform: translateX(10px) translateY(-5px);
+  }
+
+
+
+
+
