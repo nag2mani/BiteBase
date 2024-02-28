@@ -1,4 +1,4 @@
-Application Name: NewsFeed
+Application Name: BiteBase
 
 Website Link: https://bitebase.onrender.com/
 
