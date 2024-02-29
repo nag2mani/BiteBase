@@ -41,23 +41,23 @@ Visit http://127.0.0.1:8000/ in your web browser to access the application.
 
 ## Urls Pattern
 
-home: http://127.0.0.1:8000/
+Home: http://127.0.0.1:8000/
 
-contest: http://127.0.0.1:8000/contest
+Contest: http://127.0.0.1:8000/contest
 
-job: http://127.0.0.1:8000/job
+Job: http://127.0.0.1:8000/job
 
-news: http://127.0.0.1:8000/news
+News: http://127.0.0.1:8000/news
 
-login: http://127.0.0.1:8000/login
+Login: http://127.0.0.1:8000/login
 
-logout: http://127.0.0.1:8000/logout
+Logout: http://127.0.0.1:8000/logout
 
 signup: http://127.0.0.1:8000/signup
 
-contact: http://127.0.0.1:8000/contact
+Contact: http://127.0.0.1:8000/contact
 
-add_your_news: http://127.0.0.1:8000/add_your_news
+Add_your_news: http://127.0.0.1:8000/add_your_news
 
 
 
@@ -88,12 +88,19 @@ Our website is a comprehensive platform that aggregates real-time data from vari
 ## TechStack used;
 
 **1. HTML5**
+
 **2. CSS**
+
 **3. Bootstrap**
+
 **4. Javascript**
+
 **5. Python**
+
 **6. Django**
+
 **7. SQL(Sqlite)**
+
 **8. Machine Learning Model**
 
 
