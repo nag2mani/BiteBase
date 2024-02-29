@@ -7,7 +7,7 @@ Website Link: https://bitebase.onrender.com/
 
 ## Installation
 
-Clone the repository then move to project directory using cd foldername.
+Clone the repository then move to project directory using cd NewsFeed.
 
 ```shell
 git clone https://github.com/nag2mani/NewsFeed.git
@@ -36,32 +36,32 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Visit ```shell http://127.0.0.1:8000/ ``` in your web browser to access the application.
+Visit http://127.0.0.1:8000/ in your web browser to access the application.
 
 
 ## Urls Pattern
 
-path('', home, name='home'),
+home: http://127.0.0.1:8000/
 
-path('contest/', contest, name='contest'),
+contest: http://127.0.0.1:8000/contest
 
-path('job/', job, name='job'),
+job: http://127.0.0.1:8000/job
 
-path('news/', news, name='news'),
+news: http://127.0.0.1:8000/news
 
-path("login/", login_page, name='login'),
+login: http://127.0.0.1:8000/login
 
-path("logout/", logout_page, name='logout'),
+logout: http://127.0.0.1:8000/logout
 
-path("signup/", signup, name='signup'),
+signup: http://127.0.0.1:8000/signup
 
-path("contact/", contact, name='contact'),
+contact: http://127.0.0.1:8000/contact
 
-path("add_your_news/", add_your_news, name='add_your_news'),
+add_your_news: http://127.0.0.1:8000/add_your_news
 
 
 
-**Website Summary:**
+##  Our Serviecs:
 
 Our website is a comprehensive platform that aggregates real-time data from various sources to provide users with valuable information on hackathons, coding contests, job opportunities, and news articles. Here's a summary of its key features:
 
