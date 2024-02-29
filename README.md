@@ -7,27 +7,36 @@ Website Link: https://bitebase.onrender.com/
 
 ## Installation
 
-Clone the repository:
+Clone the repository then move to project directory using cd foldername.
 
+```shell
 git clone https://github.com/nag2mani/NewsFeed.git
+```
+
 
 
 ## Install dependencies:
 
+```shell
 pip install -r requirements.txt
-
+```
 
 ## Run migrations:
 
+```shell
 python manage.py makemigrations
+```
+```shell
 python manage.py migrate
-
+```
 
 ## Start the development server:
 
+```shell
 python manage.py runserver
+```
 
-Visit http://127.0.0.1:8000/ in your web browser to access the application.
+Visit ```shell http://127.0.0.1:8000/ ``` in your web browser to access the application.
 
 
 ## Urls Pattern
