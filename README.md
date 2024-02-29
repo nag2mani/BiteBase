@@ -84,25 +84,26 @@ Our website is a comprehensive platform that aggregates real-time data from vari
    - The summarized news articles make it easy for users to grasp the key information quickly and efficiently.
 
 
-Through these features, our website aims to empower users with valuable insights and opportunities, making it a one-stop destination for staying updated and discovering relevant content in the realms of technology, innovation, and professional development.
+
+## TechStack used;
+
+**1. HTML5**
+**2. CSS**
+**3. Bootstrap**
+**4. Javascript**
+**5. Python**
+**6. Django**
+**7. SQL(Sqlite)**
+**8. Machine Learning Model**
 
 
 
-TechStack used;
+## Team:
 
-1. HTML5
-2. CSS
-3. Bootstrap
-4. Javascript
-5. Python
-6. Django
-7. SQL
-8. Machine Learning Model
+**Nagmani Kumar Team Lead [Backend and ML]**,
 
+**Ram Bhanwar Bhadiyar [FrontEnd Developer]**,
 
+**Amit Diwakar [UI/UX Designer]**
 
-Team:
-Nagmani Kumar Team Lead [Backend and ML], 
-Ram Bhanwar Bhadiyar [FrontEnd Developer], 
-Amit Diwakar [UI/UX Designer]
 
