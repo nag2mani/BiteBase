@@ -7,6 +7,8 @@ from django.contrib.auth import authenticate, login, logout #login for storing s
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 import razorpay
+import requests
+
 
 def home(request):
     return render(request, 'index.html')
@@ -119,8 +121,21 @@ def signup(request):
     return render(request, 'signup.html')
 
 
+# def payment_required(view_func):
+#     def _wrapped_view(request, *args, **kwargs):
+#         # Verify payment status using Razorpay API
+#         user_profile = UserProfile.objects.get(user=request.user)
+#         if user_profile.has_paid:
+#             return view_func(request, *args, **kwargs)
+#         else:
+#             messages.error(request, "You need to make a payment to access this page.")
+#             return redirect("payment_page")  # Redirect to the payment page or any other page
+#     return _wrapped_view
+
+
 
 @login_required(login_url="/login/")
+# @payment_required  # Apply the payment check decorator
 def add_your_news(request):
     if request.method == "POST":
         headline = request.POST.get('headline')
