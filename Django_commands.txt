@@ -1,0 +1,147 @@
+# TO Create virtual environment in Window.
+pip install virtualenv - kind of room
+virtualenv env (env is folder as room)
+cd env/scripts/activate (to activate env, everytime you have to do)
+
+
+# TO Create virtual environment in Linux.
+cd path/to/your/project
+python3 -m venv virtualenviroment_name
+source virtualenviroment_name/bin/activate
+
+
+# To Install all package in requirment.txt
+pip install -r requirements.txt
+
+
+# To run build.sh file.
+bash build.sh
+
+
+# To Create superuser for Django admin
+python manage.py createsuperuser
+
+
+# To change password and forget username of superuser
+python manage.py shell
+from django.contrib.auth.models import User
+users = User.objects.all()
+print(users)
+python manage.py changepassword <username>
+
+#To delete superuser
+python manage.py shell
+from django.contrib.auth.models import User
+User.objects.all()[0].delete()  (it will delete user which is at 0 index)
+
+
+
+# To start Django Project.
+django-admin startproject project_1
+python manage.py startapp home (to make home as new features in the application inside your core directory)
+python manage.py startapp account (to make home as new features in the application inside core directory)
+python manage.py runserver 0.0.0.0:5000 (TO run server/ at specific port, it will be run inside the core directory)
+
+don't forget to add apps in settings.py
+
+view.py of every app is logical part from where we can send data from backend to frontend.
+
+templates ke ander index.html banaoge then wo automatic detect kar lega.
+(templates should be inside your app(like: home, contacts etc.)
+
+context = {'peoples': peoples} ; for sending data from backend to frontend. (write this in the return of the home function of views) 
+
+python manage.py makemigrations (after writing in the file of model.py of app)
+
+python manage.py migrate (detabse ke ander deta dikhne lagega)
+
+what if we delete a migration file ()
+
+python manage.py shell  ->  import file  -> Then you can put student(data) then student.save() to save data in the database.
+x = Student(name = "nag", age = 22, email = "dscn@jsd.v")
+x.save()
+Student.objects.all()
+Student.objects.all()[0].name
+Student.objects.all()[0].id
+if you want to run a function inside a file which is using some resources of django then you can run this function using shell.
+(first import that file in shell then call that function).
+search django shell.
+
+CRUD Operation:
+
+Three method to create data in Car class.
+1. car = Car(name = 'bmw', speed = 120)
+   car.save()
+2. Car.objects.create(name = 'audi', speed = 150)
+   (no need to save)
+3. Car.objects.create(**car_dict)
+    where car_dict is a dictonary contain name and spped as key and its value).
+
+Read:
+Car.object.get(id=100)  , if id not present then it will through error.
+Car.object.get(id=100)  , if id is not present then it will return empty.
+
+Update method;
+x = Car.object.get(id = 1)
+x.name = "Creata"
+x.speed = 200
+x.save()
+or
+Car.objects.filter(id = 1).update(name = 'dfg')
+
+Delete;
+Car.object.get(id = 1).delete()
+Car.object.all().delete()   , delete all data of car
+
+Note;
+1. If you add __str__ method inside Car class and return self.name then it show name during crud operation.
+2. To send data from frontend to backend use POST.
+3. To send data from backend to frontend use context which is defined in views.py
+
+
+
+
+To see users,
+from django.contrib.auth.models import *
+User.objects.all()[0].username
+
+To see model data;
+from home.models import *
+Contest.objects.all()[0].name
+
+
+
+
+
+
+
+Title : Byju’s reducing real estate footprint, vacates two offices in Bengaluru.
+Desciption : Byju’s has relinquished about 6,20,000 square feet of office space in Bengaluru as the edtech major is looking to slash costs and raise capital amid a series of crises.The terminated office assets include 550,000 sq ft in Kalyani Tech Park in Whitefield and 70,000 sq ft in IBC Knowledge Park, people aware of the matter said. Both these assets were given up between 2022 and 2023.
+link: https://economictimes.indiatimes.com/tech/technology/byjus-reducing-real-estate-footprint-vacates-two-offices-in-bengaluru/articleshow/105744500.cms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search; 
+django template tags.
+django models(diffrent fields).
