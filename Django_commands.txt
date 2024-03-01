@@ -34,6 +34,8 @@ python manage.py shell
 from django.contrib.auth.models import User
 User.objects.all()[0].delete()  (it will delete user which is at 0 index)
 
+# To add Google Signin option;
+https://youtu.be/yO6PP0vEOMc?si=u5s_IRff33rWSOZ3
 
 
 # To start Django Project.
