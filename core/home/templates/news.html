@@ -57,12 +57,25 @@
     <div class="row mb-3">
       <div class="col-6">
         <a href="" class="text-info">
-          <i class="fas fa-plane"></i>
-          Travels
+          {% if news.percent >= 50 %}
+          <h6 id='thumbs-up'
+            style="background-color: rgb(248, 38, 19); padding: 5px; color: black; text-align: center;">Likely To Be
+            Fake</h6>
+          {% else %}
+          <h6 id="thumbs-down"
+            style="background-color: rgb(67, 185, 28); padding: 5px; color: black; text-align: center;"> Good News</h6>
+          {%endif%}
         </a>
       </div>
-      <div class="col-6 text-end">
-        <u> 15.07.2020</u>
+      <!-- <div class="col-3 d-flex fas fa-plane text-info"> -->
+      <div class="col-3 d-flex">
+        <h5 style="color: rgb(12, 12, 244);" class="justify-content-between "> Travels</h5>
+      </div>
+      <div class="col-3 text-end">
+        <span style="color: green;"><i class="far fa-thumbs-up"></i>20</span> &nbsp;
+        <!-- <span><i class="far fa-thumbs-up"></i> {{ news.likes }}</span> -->
+        <span style="color: red;"><i class="far fa-thumbs-down"></i>4</span> &nbsp;
+        <!-- <span><i class="far fa-thumbs-down"></i> {{ news.dislikes }}</span> -->
       </div>
     </div>
     <!-- Article title and description -->
@@ -75,6 +88,8 @@
   </div>
   {% endfor %}
 </div>
+
+
 
 <div class="text-center">
   <h2>Put your own News on the top of the page</h2>

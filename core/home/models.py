@@ -39,6 +39,7 @@ class News(models.Model):
     headline = models.CharField(max_length=1000)
     summary = models.CharField(max_length=10000000)
     link = models.URLField()
+    percent = models.IntegerField()
 
 
 class Contact(models.Model):
@@ -53,5 +54,6 @@ class Add_your_news(models.Model):
         link = models.URLField()
         summary = models.CharField(max_length=10000000)
         image = models.ImageField(upload_to="ads_image")
+
 
 

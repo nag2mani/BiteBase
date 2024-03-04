@@ -1,11 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
 from home.models import *
+import math
+import nltk
+from nltk.tokenize import word_tokenize
+
+# Download the necessary NLTK resources
+nltk.download('punkt')
+nltk.download('universal_tagset')
+
 
 def contest_generator():
     url = 'https://clist.by/'
     response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'lxml')
+    soup = BeautifulSoup(response.text, 'html.parser')
     title_search_tags = soup.find_all('a', class_='title_search')
 
     # contest_list = []
@@ -28,7 +36,7 @@ def contest_generator():
 def job_generator():
     url = 'https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=python'
     response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'lxml')
+    soup = BeautifulSoup(response.text, 'html.parser')
     jobs = soup.find_all('li', class_ = 'clearfix job-bx wht-shd-bx')
 
     for job in jobs:
@@ -48,8 +56,10 @@ def job_generator():
 def news_generator():
     url = 'https://timesofindia.indiatimes.com/briefs'
     response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'lxml')
+    soup = BeautifulSoup(response.text, 'html.parser')
     news = soup.find_all('div', class_='brief_box')
+
+    ML_Model_cofficient = [1.34674492, -3.96302032, 2.06307081]  #Theta-0(const), Theta-1(adj/pron), Theta-2(adv/adj)
 
     for new in news:
         if response.status_code == 200:
@@ -58,7 +68,37 @@ def news_generator():
             if new.find('p'):
                 summary = new.find('p').find('a').text.strip()
                 apply_link = 'https://timesofindia.indiatimes.com/india/bhai-dont-tell-ma-that-im-trapped-in-tunnel/articleshow/105299928.cms'
-                
-            News.objects.create(headline = headline, summary = summary, link = apply_link)
+            
+            # Tokenize the text into words
+            words = word_tokenize(summary)
+            # Tag the words using NLTK's pos_tag function with the universal tagset
+            tagged_words = nltk.pos_tag(words, tagset='universal')
+            # Count the number of adjectives (ADJ), adverbs (ADV), and pronouns (PRON)
+            adj_count = sum(1 for word, tag in tagged_words if tag == 'ADJ')
+            adv_count = sum(1 for word, tag in tagged_words if tag == 'ADV')
+            pron_count = sum(1 for word, tag in tagged_words if tag == 'PRON')
+
+            # Handling division by 0
+            if (adj_count and pron_count) != 0:
+            # Calculate z
+                z = ML_Model_cofficient[0] + ML_Model_cofficient[1] * (adj_count/pron_count) + ML_Model_cofficient[2] * (adv_count / adj_count)
+            else:
+                z = ML_Model_cofficient[0]
+
+            # Calculate sigmoid
+            sigmoid = 1 / (1 + math.exp(-z))
+
+            rounded_sigmoid = round(sigmoid,4) * 100
+
+            if rounded_sigmoid > 0:
+
+                News.objects.create(headline = headline, summary = summary, link = apply_link, percent = rounded_sigmoid)
+
         else:
             print("Failed to retrieve the webpage. Status code:", response.status_code)
+
+
+
+news_generator()
+contest_generator()
+job_generator()

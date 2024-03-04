@@ -37,7 +37,7 @@ def news(request):
     payment = client.order.create({'amount' :100, 'currency':'INR', 'payment_capture':1})
     news_obj.razor_pay_order_id = payment['id']
 
-    news_from_database = News.objects.all()[1:61]
+    news_from_database = News.objects.all()[101:161]
     ads_news = Add_your_news.objects.all().order_by('-pk').first()  #to find latest insertiond
 
     context={'news_list_all' : news_from_database, 'ads_news' : ads_news, 'payment' : payment}
