@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+
+
+# These are my models, created for database.
 
 class Contest(models.Model):
     # id = models.AutoField()
@@ -29,7 +31,6 @@ class Job(models.Model):
 #         UserProfile.objects.create(user=instance)
 
 
-
 class News(models.Model):
     # If with news we can also add like and dislike button so that users can validae the machine learning model.
     user = models.ForeignKey(User, on_delete = models.SET_NULL, null = True, blank = True)
@@ -56,6 +57,3 @@ class Add_your_news(models.Model):
         link = models.URLField()
         summary = models.CharField(max_length=10000000)
         image = models.ImageField(upload_to="ads_image")
-
-
-
