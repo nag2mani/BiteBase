@@ -59,7 +59,6 @@ def contact(request):
             )
         
         messages.info(request, "Your Query Accepted, We will get back to you sortly.")
-
         return redirect("/contact/")
     
     return render(request, 'contact.html')
@@ -122,6 +121,7 @@ def signup(request):
 
 
 # def payment_required(view_func):
+#     # This will help us to not access ads page before payments.
 #     def _wrapped_view(request, *args, **kwargs):
 #         # Verify payment status using Razorpay API
 #         user_profile = UserProfile.objects.get(user=request.user)
@@ -151,12 +151,9 @@ def add_your_news(request):
             )
         
         messages.info(request, "Congratulations! Your news added.")
-
         return redirect("/add_your_news/")
 
     return render(request, 'add_your_news.html')
-
-
 
 
 

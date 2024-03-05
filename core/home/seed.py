@@ -5,6 +5,7 @@ import math
 import nltk
 from nltk.tokenize import word_tokenize
 
+
 # Download the necessary NLTK resources.
 nltk.download('punkt')
 nltk.download('universal_tagset')
@@ -105,3 +106,5 @@ def news_generator():
 news_generator()
 contest_generator()
 job_generator()
+
+
