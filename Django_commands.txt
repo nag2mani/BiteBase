@@ -118,7 +118,9 @@ Contest.objects.all()[0].name
 
 
 Title : Byju’s reducing real estate footprint, vacates two offices in Bengaluru.
+
 Desciption : Byju’s has relinquished about 6,20,000 square feet of office space in Bengaluru as the edtech major is looking to slash costs and raise capital amid a series of crises.The terminated office assets include 550,000 sq ft in Kalyani Tech Park in Whitefield and 70,000 sq ft in IBC Knowledge Park, people aware of the matter said. Both these assets were given up between 2022 and 2023.
+
 link: https://economictimes.indiatimes.com/tech/technology/byjus-reducing-real-estate-footprint-vacates-two-offices-in-bengaluru/articleshow/105744500.cms
 
 
