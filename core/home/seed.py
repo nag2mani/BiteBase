@@ -5,7 +5,7 @@ import math
 import nltk
 from nltk.tokenize import word_tokenize
 
-# Download the necessary NLTK resources
+# Download the necessary NLTK resources.
 nltk.download('punkt')
 nltk.download('universal_tagset')
 
