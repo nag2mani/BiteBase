@@ -11,6 +11,7 @@ nltk.download('universal_tagset')
 
 
 def contest_generator():
+    # This function scrap contests from web and put it into our database for further uses.
     url = 'https://clist.by/'
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -34,6 +35,7 @@ def contest_generator():
 
 
 def job_generator():
+    # This function scrap jobs from web and put it into our database for further uses.
     url = 'https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=python'
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -54,6 +56,7 @@ def job_generator():
 
 
 def news_generator():
+    # This function scrap news with their title and data from web and put it into our database for further uses.
     url = 'https://timesofindia.indiatimes.com/briefs'
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -98,7 +101,7 @@ def news_generator():
             print("Failed to retrieve the webpage. Status code:", response.status_code)
 
 
-
+# Here I am calling the function for adding data into databses.
 news_generator()
 contest_generator()
 job_generator()
