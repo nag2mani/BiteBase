@@ -16,8 +16,9 @@ class Job(models.Model):
 
 
 # class UserProfile(models.Model):
+#     # This is for not accessing the adding news page without payments.
 #     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     # Add additional fields as needed
+#     # Add additional fields as needed.
 
 #     def __str__(self):
 #         return self.user.username
