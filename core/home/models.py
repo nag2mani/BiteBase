@@ -30,6 +30,7 @@ class Job(models.Model):
 
 
 class News(models.Model):
+    # If with news we can also add like and dislike button so that users can validae the machine learning model.
     user = models.ForeignKey(User, on_delete = models.SET_NULL, null = True, blank = True)
 
     razor_pay_order_id = models.CharField(max_length=100, null=True, blank=True)
