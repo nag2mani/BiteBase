@@ -49,19 +49,9 @@ Job: http://127.0.0.1:8000/job
 
 News: http://127.0.0.1:8000/news
 
-Login: http://127.0.0.1:8000/login
-
-Logout: http://127.0.0.1:8000/logout
-
-signup: http://127.0.0.1:8000/signup
-
 Contact: http://127.0.0.1:8000/contact
 
-Add_your_news: http://127.0.0.1:8000/add_your_news
-
-
-
-##  Our Serviecs:
+##  Our Services:
 
 Our website is a comprehensive platform that aggregates real-time data from various sources to provide users with valuable information on hackathons, coding contests, job opportunities, and news articles. Here's a summary of its key features:
 
