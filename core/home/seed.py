@@ -92,7 +92,7 @@ def news_generator():
             # Calculate sigmoid
             sigmoid = 1 / (1 + math.exp(-z))
 
-            rounded_sigmoid = round(sigmoid,4) * 100
+            rounded_sigmoid = round(sigmoid ,4) * 100
 
             if rounded_sigmoid > 0:
 
