@@ -38,7 +38,8 @@ def news(request):
     news_obj.razor_pay_order_id = payment['id']
 
     news_from_database = News.objects.all()[101:161]
-    ads_news = Add_your_news.objects.all().order_by('-pk').first()  #to find latest insertiond
+    ## ads_news = Add_your_news.objects.all().order_by('-pk').first()  #to find latest insertiond
+    ads_news = Add_your_news.objects.all()[0]
 
     context={'news_list_all' : news_from_database, 'ads_news' : ads_news, 'payment' : payment}
     return render(request, 'news.html', context)
