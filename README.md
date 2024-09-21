@@ -47,7 +47,7 @@ Contest: http://127.0.0.1:8000/contest
 
 Job: http://127.0.0.1:8000/job
 
-News: http://127.0.0.1:8000/news
+Tech News: http://127.0.0.1:8000/news
 
 Contact: http://127.0.0.1:8000/contact
 
@@ -69,7 +69,7 @@ Our website is a comprehensive platform that aggregates real-time data from vari
 
 
 3. **News Articles:**
-   - Our website also curates news articles from different sources, presenting users with the latest headlines and summaries.
+   - Our website also curates Tech news articles from different sources, presenting users with the latest headlines and summaries.
    - Users can stay informed about current events, industry updates, and trending topics without the need to visit multiple websites.
    - The summarized news articles make it easy for users to grasp the key information quickly and efficiently.
 
