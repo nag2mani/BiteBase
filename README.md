@@ -95,7 +95,7 @@ Our website is a comprehensive platform that aggregates real-time data from vari
 
 
 
-## Team:
+## Team Members:
 
 **Nagmani Kumar Team Lead [Backend, Database and ML]**,
 
